@@ -27,7 +27,6 @@
 - [Godot Engine 4.x](https://godotengine.org)  
 - **GDScript** for player logic and interactions  
 - **PBR Materials** + **Dynamic Lighting** for realism  
-- Modular scene architecture for fast iteration  
 
 <br>
 
