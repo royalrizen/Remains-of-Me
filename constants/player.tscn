@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cubgwx8v8ffbr"]
+
+[ext_resource type="Script" uid="uid://c2mhft4xxeifk" path="res://scripts/Player.cs" id="1_lcl7p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fkhut"]
+radius = 0.3
+height = 1.2
+
+[node name="Player" type="CharacterBody3D" unique_id=749368341]
+process_mode = 3
+script = ExtResource("1_lcl7p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1369795028]
+shape = SubResource("CapsuleShape3D_fkhut")
+debug_color = Color(0.9967793, 0.8318146, 0.30083415, 1)
+
+[node name="Head" type="Node3D" parent="." unique_id=641487860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4535483, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=1591637475]
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1328748193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10229546, 0)
+fov = 56.445522
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=238057246]
+
+[node name="Crosshair" type="Control" parent="UI" unique_id=1342776617]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Top" type="ColorRect" parent="UI/Crosshair" unique_id=262837231]
+layout_mode = 0
+offset_left = -1.5
+offset_top = -18.0
+offset_right = 1.5
+offset_bottom = -6.0
+
+[node name="Bottom" type="ColorRect" parent="UI/Crosshair" unique_id=707592814]
+layout_mode = 0
+offset_left = -1.5
+offset_top = 6.0
+offset_right = 1.5
+offset_bottom = 18.0
+
+[node name="Left" type="ColorRect" parent="UI/Crosshair" unique_id=720862051]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -1.5
+offset_right = -6.0
+offset_bottom = 1.5
+
+[node name="Right" type="ColorRect" parent="UI/Crosshair" unique_id=119988507]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -1.5
+offset_right = 18.0
+offset_bottom = 1.5

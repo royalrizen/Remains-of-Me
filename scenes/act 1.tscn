@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://pbp52um2gfgg"]
+
+[ext_resource type="PackedScene" uid="uid://dbug8nt0x1pw5" path="res://constants/floor4x4.tscn" id="1_p1m4n"]
+[ext_resource type="PackedScene" uid="uid://nd2s4jo4ou35" path="res://constants/wall4x2.tscn" id="2_c2wbf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7ugfy"]
+sky_top_color = Color(0.21595201, 0.4834246, 0.6056623, 1)
+sky_horizon_color = Color(0.61091805, 0.6700362, 0.6915957, 1)
+ground_horizon_color = Color(0.61091805, 0.6700362, 0.6915957, 1)
+
+[sub_resource type="Sky" id="Sky_lao1m"]
+sky_material = SubResource("ProceduralSkyMaterial_7ugfy")
+
+[sub_resource type="Environment" id="Environment_p1m4n"]
+background_mode = 2
+sky = SubResource("Sky_lao1m")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Act1" type="Node3D" unique_id=1204944377]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=481576736]
+environment = SubResource("Environment_p1m4n")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=136126308]
+transform = Transform3D(-0.9106837, -0.32284957, 0.2577274, 0, 0.62387955, 0.7815205, -0.41310441, 0.71171796, -0.56815696, 0, 2.3477263, 0)
+light_color = Color(0.6514316, 0.7021696, 0.7521945, 1)
+shadow_enabled = true
+
+[node name="Apartment" type="Node3D" parent="." unique_id=1297068442]
+
+[node name="Floors" type="Node3D" parent="Apartment" unique_id=1598679884]
+
+[node name="Floor4x4" parent="Apartment/Floors" unique_id=527757376 instance=ExtResource("1_p1m4n")]
+
+[node name="Walls" type="Node3D" parent="Apartment" unique_id=416821621]
+
+[node name="Wall4x2_1" parent="Apartment/Walls" unique_id=897485600 instance=ExtResource("2_c2wbf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+
+[node name="Wall4x2_2" parent="Apartment/Walls" unique_id=380008011 instance=ExtResource("2_c2wbf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2)
+
+[node name="Wall4x2_3" parent="Apartment/Walls" unique_id=2045125666 instance=ExtResource("2_c2wbf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2, 1, 0)
+
+[node name="Wall4x2_4" parent="Apartment/Walls" unique_id=682142537 instance=ExtResource("2_c2wbf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2, 1, 0)
