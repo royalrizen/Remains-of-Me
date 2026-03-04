@@ -1,3 +1,19 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+.import/
+.export/
+.export_presets.cfg
+
+.mono/
+bin/
+obj/
+
+*.exe
+*.dll
+*.pdb
+
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
